@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram Bot (doimiy fon rejimda)
+After=network.target
+
+[Service]
+Type=simple
+User=youruser
+WorkingDirectory=/home/youruser/TELEGRAM_BOT_TOKEN
+EnvironmentFile=/home/youruser/TELEGRAM_BOT_TOKEN/.env
+ExecStart=/home/youruser/TELEGRAM_BOT_TOKEN/.venv/bin/python bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
